@@ -25,7 +25,12 @@ function checkSum(num) {
     outputArr.push(element);
   });
   const sum = outputArr.reduce((a, b) => a + b);
-  return sum;
+  const checkLuhn = sum.toString().split("");
+  if (checkLuhn.at(-1) === "0") {
+    return ("This card number is valid.");
+  } else {
+    return ("This card number is not valid.");
+  }
 }
 
-checkSum("4102080860435620");
+console.log(checkSum("4102080860435620"));
