@@ -18,6 +18,14 @@ function checkSum(num) {
       return result;
     }
   });
+  let outputArr = evenArr.map(function(element) {
+    return parseInt(element);
+  });
+  doubledArr.forEach(function(element) {
+    outputArr.push(element);
+  });
+  const sum = outputArr.reduce((a, b) => a + b);
+  return sum;
 }
 
 checkSum("4102080860435620");
