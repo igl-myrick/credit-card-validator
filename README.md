@@ -19,3 +19,7 @@ Expected Output: 50
 Test: "It will return a true or false statement based on whether the output ends in 0."
 Code: countSum("4102080860435620");
 Expected Output: "This card number is valid."
+
+Test: "It will return the card company alongside the result."
+Code: countSum("4102080860435620");
+Expected Output: "This Visa card number is valid."

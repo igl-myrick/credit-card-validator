@@ -2,6 +2,18 @@ function checkSum(num) {
   let inputArr = num.split("");
   let oddArr = [];
   let evenArr = [];
+  let cardCompany;
+  if (inputArr[0] === "3" && (inputArr[1] === "4" || inputArr[1] === "7")) {
+    cardCompany = "American Express";
+  } else if (inputArr[0] === "4") {
+    cardCompany = "Visa";
+  } else if (inputArr[0] === "5") {
+    cardCompany = "Mastercard";
+  } else if (inputArr[0] === "6") {
+    cardCompany = "Discover";
+  } else {
+    cardCompany = "unknown";
+  }
   inputArr.forEach(function(element, index) {
     if (index % 2 === 0) {
       evenArr.push(element);
@@ -26,11 +38,11 @@ function checkSum(num) {
   });
   const sum = outputArr.reduce((a, b) => a + b);
   const checkLuhn = sum.toString().split("");
-  if (checkLuhn.at(-1) === "0") {
-    return ("This card number is valid.");
+  if (cardCompany === "unknown") {
+    return "This card number is not valid.";
+  } else if (checkLuhn.at(-1) === "0") {
+    return ("This " + cardCompany + " card number is valid.");
   } else {
-    return ("This card number is not valid.");
+    return ("This " + cardCompany + " card number is not valid.");
   }
 }
-
-console.log(checkSum("4102080860435620"));
