@@ -1,5 +1,5 @@
-function checkSum(num) {
-  let inputArr = num.split("");
+function checkSum(ccNumStr) {
+  let inputArr = ccNumStr.split("");
   let toModifyArr = [];
   let unmodifiedArr = [];
   let cardCompany;
